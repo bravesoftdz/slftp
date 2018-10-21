@@ -1,0 +1,18 @@
+﻿From 1.4.0.5 MySQL support has been added and will require install if you wish to use it. You will require MySQL libs.
+For windows users you can get the libs from the Downloads link on the menu.
+
+Linux users
+apt-get install libmysqlclient18 libmysqlclient-dev
+
+MySQL table structure
+CREATE TABLE `addpre` (
+ `rls` varchar(255) NOT NULL DEFAULT '',
+ `section` varchar(25) DEFAULT NULL,
+ `ts` int(16) DEFAULT NULL,
+ `source` varchar(50) DEFAULT NULL,
+ PRIMARY KEY (`rls`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+
+You can use external MYSQl aswell, keep in minde you have to disable the bind-network config on the MYSQL host and add the IP to the mysql user!
+

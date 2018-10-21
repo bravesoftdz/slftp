@@ -1,0 +1,2 @@
+Create a backup from current files including all used databases.
+Usage: <cmd> 

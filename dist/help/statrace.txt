@@ -1,0 +1,11 @@
+Display Race stats for sites.
+Usage: <cmd> SITENAME|* [Period] [detailed]
+
+detailed can only be used if you type a sitename, will be true if not other declared.
+It shows more infos about the sites you traded to/from.
+If you omit period it'll use DAY.
+valid periods: DAY, MONTH, YEAR
+
+<cmd> HQ <- Start of DAY and show details
+<cmd> HQ YEAR 0 <- Start of YEAR and show no details
+<cmd> * MONTH <- Start of MONTH and show total count for all sites

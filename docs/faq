@@ -1,0 +1,80 @@
+                                       FAQ
+-------------------------------------------------------------------------------
+Q. I've setup all the dir and the predir, now when i type !dirlist it puts the 
+   pre dir path infront of what ever i type...so you can't search any dir except 
+   the pre dir.
+A. You do !dirlist sitename SECTION and _NOT_ !dirlist sitename DIRECTORY
+   !dirlist site /Wii <- WONT WORK
+   !setdir site WII /Wii
+   !dirlist site WII <- WORKS. 
+   This is the sense of bookmarks, you dont need to remember the actual path.
+   
+ 
+Q. How do I upgrade it to the latest revision?
+A. Create a backup of your configuration files.
+   Overwrite the binaries, then read the CHANGELOG carefully and merge the 
+   mentioned changes in configuration file(s).
+
+   
+Q. I get "couldnt init TCP library!" error on my linux shell!
+A. Your shell's /etc/host file is probably misconfigured, and the hostname
+   cannot be resolved. Make sure the name what `hostname` reports is added
+   to this file.
+   
+   
+Q. How can I run the bot in background on linux?
+A. Use screen. CTRL+A D
+
+
+Q. Does slftp support chains?
+A. No and yes. Chaining is old deprecated way of race tools. slFtp works 
+   differently, read CHAINS document.
+      
+
+Q. Scrolling with PAGE UP/DN does not work on my SecureCRT+linux combo!
+A. Setup securecrt to use escape codes (ESC[n~) or use putty.
+
+
+Q. I want to filter stuffs not english, french or german, how do I do that?
+A. For NON mp3 sections, you can add a rule like this:
+   !ruleadd sitename section if foreign && not language in french, german then DROP
+   For MP3 sections you need to use the mp3language condition, which works
+   a bit differently:
+   !ruleadd sitename mp3 if not mp3language in en, fr, de then DROP
+
+   
+Q. How can I stop all the transfers?!
+A. Use !setdown !all!
+   This will mark all the sites as down and make the queue empty.
+   (You will need to use !bnctest when you want to use slftp again)
+
+   
+Q. Does slftp support regexpes in precatcher/skiplist/etc. configs?
+A. No. Simple masks are supported only. Quote from Delphi help:
+   A valid mask consists of literal characters, sets, and wildcards.
+   Each literal character must match a single character in the string. 
+   The comparison to literal characters is case-insensitive.
+   Each set begins with an opening bracket ([) and ends with a closing bracket (]). 
+   Between the brackets are the elements of the set. 
+   Each element is a literal character or a range. 
+   Ranges are specified by an initial value, a dash (-), and a final value. 
+   Do not use spaces or commas to separate the elements of the set. 
+   A set must match a single character in the string. 
+   The character matches the set if it is the same as one of the literal 
+   characters in the set, or if it is in one of the ranges in the set. 
+   A character is in a range if it matches the initial value, the final value, 
+   or falls between the two values. All comparisons are case-insensitive. 
+   If the first character after the opening bracket of a set is an 
+   exclamation point (!), then the set matches any character that is 
+   not in the set.
+   Wildcards are asterisks (*) or question marks (?). 
+   An asterisk matches any number of characters. 
+   A question mark matches a single arbitrary character.
+
+   
+Q. How do I change password of a site without deleting/readding it?
+A. Read !help tweak
+
+
+Q. How do I flush the queue?
+A. !setdown !all!

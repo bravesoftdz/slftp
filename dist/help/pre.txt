@@ -1,0 +1,10 @@
+Usage: <cmd> [section] rlsname [ripper]
+Description: first it checks whether rlsname exists on each site and then it sends pre commands. 
+Default section is PRE.
+Ripper is optional if DB_NICK is empty string in config file.
+In pre command <ripper> will be set according to what you type here,
+and DB_NICK will be messaged after pre with a line like this:
+addrelease MyRip-GRP ripper files filesize genre
+Example: <cmd> MyRip-GRP joulopukki
+Example: <cmd> X264-1080P MyRip-GRP
+Example: <cmd> X264-720P MyRip-GRP ripbot

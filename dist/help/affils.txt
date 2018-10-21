@@ -1,0 +1,6 @@
+Show current affils added for sitename
+Usage: <cmd> sitename
+
+In the future, this command will allow you to add/remove one or multiple affils to a site.
+
+For now use <cmdprefix>setaffils to set the site affils.

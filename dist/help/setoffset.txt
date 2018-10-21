@@ -1,0 +1,11 @@
+Usage: <cmd> +/-<offset>
+Use this feature to add/deduct hours on pretime you receive from the connected predb.
+This is needed so that pretime is recogniced in the correct time zone.
+
+Example:
+<cmd> +3 --- add 3hours
+<cmd> -2 --- remove 2hours
+<cmd> 0 --- disabled/no offset
+
+Use http://www.timeanddate.com and enter your city name. (eg. New York)
+New York is current time zone offset: UTC/GMT -4 hours, set <cmd> -4

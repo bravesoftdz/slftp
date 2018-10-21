@@ -1,0 +1,12 @@
+Usage: <cmd> sitename [value]
+Value can be 0 or 1. Leave it blank to display current value.
+You can use * as sitename to list/set all sites skipinc values.
+
+When the site is used as a source site in a transfer, setting this to 1 will prevent
+slftp from transfering a file that is still being uploaded on that source site.
+This can prevent your transfers from being stuck on slow/incomplete files and eating
+credits for nothing.
+
+If not set it will read global value skip_being_uploaded_files from slftp.ini.
+
+It actually works only with for GLFTPD sites. This has no effect (yet) on other FTPD softwares.

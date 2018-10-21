@@ -1,0 +1,5 @@
+Reload rules from a file
+Usage: <cmd> action filename
+action can be : 
+- REPLACE to replace all rules by the one in filename
+- ADD to add rules from the filename

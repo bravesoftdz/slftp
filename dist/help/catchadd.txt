@@ -1,0 +1,20 @@
+Adds a rule for precatcher. Channel must already be configured. See <prefix>ircchanadd
+Usage: <cmd> sitename netname channelname botnicks (PRE|NEWDIR) words [section]
+botnicks is a comma separated list of nicks of the bot.
+Event can be NEWDIR and PRE.
+Words is a comma seperated list of words which are present in the actual announce line.
+Section is optional, you can use it to force the section (if the announce line doesnt contain it)
+
+You probably want to add (at least) three catch rules for each of your sites.
+Ok, we have a site called X3, they are very expert guys and customized the theme, 
+so they announce pre as squirt and newdir is fisting, 1st file is anal,
+race event is gangbang.
+Lets add its rules:
+<cmd> X3 LINKNET #x3 x3bot PRE squirt
+<cmd> X3 LINKNET #x3 x3bot NEWDIR fisting
+<cmd> X3 LINKNET #x3 x3bot NEWDIR gangbang
+<cmd> X3 LINKNET #x3 x3bot NEWDIR anal
+
+Note: for iso sites its better if you add rules for events like race, 50% complete etc,
+so the bot would know, the race is still in progress or its being continued (after someone
+left it incomplete). Simple add several rules for them as NEWDIR.

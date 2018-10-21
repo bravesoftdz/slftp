@@ -1,0 +1,5 @@
+Usage: <cmd> sitename1 sitename2 sitename3 [newslots]
+Change number of slots of a site.
+Example: <cmd> HQ1 HQ2 HQ3 3
+
+You can use the special sitename * for site-generic rules.

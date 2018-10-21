@@ -1,0 +1,4 @@
+Usage: <cmd> sitename [sectionname] [days]
+This will display upload statistics of users tightened by sitename
+(in section sectionname) of the past days day. 
+Default interval is 7 days.

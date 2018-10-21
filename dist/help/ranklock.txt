@@ -1,0 +1,7 @@
+Displays/modifies/deletes the site's locked rank value.
+Usage: !ranklock sitename [rank]
+Sitename is required. If no rank is specified, current rank lock will be displayed.
+If rank is 0, ranklock will be deleted.
+If rank is 1-9, it will be set.
+
+If a site's rank is locked, its value will be used in races for all the sections.

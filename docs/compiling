@@ -1,0 +1,83 @@
+                                Compiling slFtp
+-------------------------------------------------------------------------------
+
+Requirements
+------------
+on UNIX:
+    Latest FPC
+    Install latest FPC Version from http://www.freepascal.org/ (or use a package manager from your distro, only if up-to-date!)
+    Read https://www.freepascal.org/docs-html/current/user/userch2.html#x7-60002 if you don't know how to install.
+    
+    We actually _highly_ recommand and support compilation using fpc 3.0+.
+    
+    For example, to install the compiler environnement on debian/ubuntu:  
+
+    apt-get install fpc-source fp-compiler fp-docs fp-units-base fp-units-db fp-units-fcl fp-units-fv fp-units-gfx \
+                    fp-units-math fp-units-misc fp-units-net fp-units-rtl fp-utils screen binutils libncurses-dev \
+                    libncursesw5-dev libssl-dev libncurses5 libncursesw5-dbg
+    
+on WINDOWS:
+    Delphi 2007 on Windows
+    (we develop it with Delphi 2007 and use the API of Delphi v18, so do not try to compile with Delphi7 or Delphi 2009-XE, it will fail!)
+
+
+MySQL (optional)
+----------------
+
+For MySQL support you need to install MySQL Client (if not needed, disable it in slftp.ini and ignore this part)
+You will need to add an user to your MySQL Database with read and write privileges.
+
+on UNIX
+	# apt-get install libmysqlclient18 libmysqlclient-dev
+
+on WINDOWS:
+    Use the provided libmysql.dll or download package from https://dev.mysql.com/downloads/connector/c/ and place
+    libmysql.dll from the archive /lib/ folder into slftp dir
+
+    MySQL table structure
+    ---------------------
+    
+    Create the Database.
+    
+    	# CREATE DATABASE slftp;
+    
+    Switch to the Database.
+    
+    	# USE slftp;
+    
+    Create the Database table structure.
+    
+    	# CREATE TABLE `addpre` (
+    	#  `rls` varchar(255) NOT NULL PRIMARY KEY,
+    	#  `section` varchar(25) DEFAULT NULL,
+    	#  `ts` int(16) DEFAULT NULL,
+    	#  `source` varchar(50) DEFAULT NULL
+    	# ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+Compile
+-------
+Extract the main folder and sub folders (Replace the slFtp file/folders with your version)
+
+  # tar -xfvj slFtp.v1.*.Linux.Windows.incl.Sources-SLDev.tar.bz2
+  # cd slFtp.v1.*.Linux.Windows.incl.Sources-SLDev.tar.bz2
+
+  Change to the source directtory
+
+	# cd src/slftp
+
+on UNIX:
+    Without editing makefile
+	# make slftp_32 or make slftp_64
+	# cp slftp /My/slFtp/Path
+	
+	You can edit the SLFTPPATH in included makefile (only if you know what you do!)
+    # make all_32 or make all_64
+
+on WINDOWS:
+    Open cmd.exe and switch into slFtp dir 
+	# make.bat
+
+
+Once you have it compiled and running.
+Read the usage file and configure your slFtp.

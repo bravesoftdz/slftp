@@ -1,0 +1,2 @@
+Usage: <cmd> text.
+Add a new news entry.

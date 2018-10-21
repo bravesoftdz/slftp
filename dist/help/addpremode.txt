@@ -1,0 +1,4 @@
+Display/Change/Modifies Add Pre mode
+Usage: <cmd> MODE
+Description: 0 = Memory, 1 = SQLiTE, 2 = MYSQL
+Example: <cmd> 1

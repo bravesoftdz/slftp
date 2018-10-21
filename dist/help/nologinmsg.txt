@@ -1,0 +1,7 @@
+Usage: <cmd> sitename [value]
+Display or change the nologinmsg value. IT'LL ONLY WORK ON GLFTPD SITES!
+Value can be 0 or 1. Leave it blank to display current value.
+Using this could speedup login, it add '-' at first char to password to bypass welcome message.
+Example: <cmd> HQ1 1 [HQ1 is GLFTPD SITE]
+
+You can use the special sitename * to list all nologinmsg values.

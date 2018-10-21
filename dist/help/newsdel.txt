@@ -1,0 +1,3 @@
+Usage: <cmd> no
+Deletes the news entry specified with its number.
+Use <cmdprefix>news for the #'s.

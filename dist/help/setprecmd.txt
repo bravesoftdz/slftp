@@ -1,0 +1,5 @@
+Usage: <cmd> SITENAME SECTION PRECOMMAND
+Description: sets pre command for site and section. For Releasename use <rlsname> macro. [Use <ripper> macro.]
+Example: <cmd> MyHQ MP3 SITE PRE <rlsname> MP3
+Example: <cmd> MyHQ X264-1080P SITE PRE <rlsname> HD1080
+See also <prefix>setpredir <prefix>pre

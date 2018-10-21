@@ -1,0 +1,2 @@
+Usage: <cmd> sitename section [amount]
+Dirlist in section@sitename, displaying the latest amoung (default 10) directories.

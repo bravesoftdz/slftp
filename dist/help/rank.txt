@@ -1,0 +1,5 @@
+Displays/modifies/deletes the site's rank value belonging to section.
+Usage: !ranklock sitename section [rank]
+Sitename and section are required. If no rank is specified, rank will be displayed.
+If rank is 1-9, it will be set.
+See also: !ranklock

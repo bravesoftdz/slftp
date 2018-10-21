@@ -1,0 +1,3 @@
+Description: Check for rip on all pre-sites... similar to !check, with less output...
+Usage: <cmd> RIP
+Example: <cmd> My.Super.Duper.Rip-dUH

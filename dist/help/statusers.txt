@@ -1,0 +1,3 @@
+Usage: <cmd> [sectionname] [days]
+This will display upload statistics of groups (in section sectionname) of the past days day. 
+Default interval is 7 days.

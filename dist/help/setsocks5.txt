@@ -1,0 +1,7 @@
+Usage: <cmd> Trigger Name Value
+Description: Link a Proxy (socks5 only) to a SITE or IRCNetwork.
+Triggers: SITE or IRC
+Value: can be the Proxyname or the Indexnumber.
+Example: <cmd> SITE MYHQ 0
+Example: <cmd> SITE MYHEADQ MYSOCKS1
+Example: <cmd> SITE MYHQ -1 <- removes the proxy.

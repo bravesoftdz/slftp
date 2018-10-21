@@ -1,0 +1,2 @@
+Usage: <cmd> SITE1 SITE2 SITE3 SITE4
+Invites u into the sitechannels if u have added your ircnick!

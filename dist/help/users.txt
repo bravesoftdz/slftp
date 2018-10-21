@@ -1,0 +1,2 @@
+Lists leechers/traders of a site or displays all users.
+Usage: <cmd> [sitename]

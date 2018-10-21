@@ -1,0 +1,2 @@
+Usage: <cmd> sitename [0|1]
+Disable auto irc invites at slftp startup

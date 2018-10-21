@@ -1,0 +1,5 @@
+Get/sets/Remove autorules status of a site.
+Autorules read the siterule and let u know if anything changed.
+Usage: <cmd> sitename interval
+Usage: <cmd> * [0|500]
+If interval is zero, autorules is turned off. Interval is seconds.

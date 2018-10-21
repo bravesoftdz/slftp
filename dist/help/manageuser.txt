@@ -1,0 +1,4 @@
+Usage: <cmd> <rippername> <site command>
+Executes a raw command on all sites where a user is added.
+This is useful if you need to add ip for a ripper.
+Example: <cmd> ripper1 site addip ripper1 *@123.123.123.123

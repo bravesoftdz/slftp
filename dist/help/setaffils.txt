@@ -1,0 +1,2 @@
+_Replace_ the current sitename affils list with the provided ones
+Usage: <cmd> sitename [affil1] [affil3] [affil3] [...]

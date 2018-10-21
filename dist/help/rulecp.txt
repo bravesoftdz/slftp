@@ -1,0 +1,4 @@
+Usage: <cmd> sourcesite destsite section
+Copys the rules from Sourcesite to Destsite.
+Example: <cmd> HQ1 RACE1 MP3
+

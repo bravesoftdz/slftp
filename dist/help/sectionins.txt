@@ -1,0 +1,6 @@
+Insert sections to precatcher sections list.
+Usage: <cmd> section [word word]
+Example: <cmd> TV FR-TV-SD FR-TV (this will add "FR-TV-SD and FR-TV" to TV)
+If no words are specified, then it lists words of specified section.
+Otherwise it will add the words as value to the section key.
+

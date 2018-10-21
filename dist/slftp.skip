@@ -1,0 +1,144 @@
+[skiplist]
+# allowedfiles=directories:masks
+# masks are case insensitive. seperate values by comma (,)
+# empty directories means top of the rip
+# _MULTICDROOT_ is special, its true only if rip contains CD1 and CD2 stuffs
+# if there is no matching mask for a file, it will be skiplisted.
+#
+# builtin, hardcoded skiplists:
+# zero sized files
+# files beginning with dot
+# empty directories
+# ftprush based foobar(1).mp3 files
+# tag directories with characters like [, ]
+#
+# after these generic rules,
+# global skiplist settings allow everything
+allowedfiles=_ROOT_:*
+alloweddirs=_ROOT_:*
+allowedfiles=*:*
+dirdepth=2
+
+//Change it if u use slftp to pre/spread!
+[skiplist-PRE]
+allowedfiles=*:*
+alloweddirs=*:*
+dirdepth=2
+
+# will be used for X264-SD-FR, X264-SD-NL, X264-SD-DE etc ...
+[skiplist-X264-SD*]
+allowedfiles=_ROOT_:*.sfv,*.nfo,_RAR_
+alloweddirs=_ROOT_:Sample,Sub,Subs,Proof
+allowedfiles=Sample:*.mkv,*.mp4
+allowedfiles=Sub*:*.sfv,*.rar,*.r0[0-9]
+allowedfiles=Proof:*.jpg,*.jpeg,*proof*.sfv,*proof*.rar
+dirdepth=2
+
+[skiplist-X264-1080P*]
+allowedfiles=_ROOT_:*.sfv,*.nfo,_RAR_
+alloweddirs=_ROOT_:Sample,Sub,Subs,Proof
+allowedfiles=Sample:*.mkv
+allowedfiles=Sub*:*.sfv,*.rar,*.r0[0-9]
+allowedfiles=Proof:*.jpg,*.jpeg,*proof*.sfv,*proof*.rar
+dirdepth=2
+
+[skiplist-TVSD]
+allowedfiles=_ROOT_:*.sfv,*.nfo,_RAR_
+alloweddirs=_ROOT_:Sample
+allowedfiles=Sample:*.mp4,*.mkv
+dirdepth=2
+
+//ISO - APPS
+[skiplist-APPS]
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=CD*[1-9],DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+dirdepth=2
+
+[skiplist-EBOOK]
+allowedfiles=_ROOT_:*.zip,*.nfo
+dirdepth=1
+
+//ISO - Console
+[skiplist-PCGAMES]
+alloweddirs=_ROOT_:Proof
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=CD[1-9],DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+allowedfiles=Proof:*.sfv,_RAR_,*jpg,*.jpeg
+dirdepth=2
+
+# use this also for XBOX360XBLA and XBOX360DLC
+[skiplist-XBOX360*]
+alloweddirs=_ROOT_:Proof
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=CD[1-9],DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+allowedfiles=Proof:*.sfv,_RAR_,*jpg,*.jpeg
+dirdepth=2
+
+[skiplist-XBOXONE]
+alloweddirs=_ROOT_:Proof
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=CD[1-9],DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+allowedfiles=Proof:*.sfv,_RAR_,*jpg,*.jpeg
+dirdepth=2
+
+[skiplist-PS4]
+alloweddirs=_ROOT_:Proof
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=CD[1-9],DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+allowedfiles=Proof:*.sfv,_RAR_,*jpg,*.jpeg
+dirdepth=2
+
+//Movie Video
+[skiplist-MDVDR]
+alloweddirs=_ROOT_:Sample*,Cover*
+alloweddirs=_MULTICDROOT_:DISK[1-9],DISC[1-9],DVD[1-9],Sample,Cover
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+allowedfiles=DISK[1-9],DISC[1-9],DVD[1-9]:*.sfv,_RAR_
+allowedfiles=Sample:*.vob
+allowedfiles=Cover:*.jpg,*.jpeg
+alloweddirs=DISK[1-9],DISC[1-9],DVD[1-9]:Sample,Samples
+dirdepth=3
+
+[skiplist-MVID]
+alloweddirs=_ROOT_:Sample
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo,*.mkv,*.mp4,*.avi
+allowedfiles=Sample:*.mkv,*.avi,*.mp4
+dirdepth=2
+
+//MP3
+# use regex to match several sections with different names, /i at the end is not needed because sections are always UPPERCASE
+[skiplist-/(MP3|ABOOK|CHARTS)/]
+allowedfiles=_ROOT_:*.mp3,*.sfv,*.jpg,*.jpeg,*.nfo,*.cue,*.m3u
+dirdepth=1
+
+//XXX
+[skiplist-XXX]
+allowedfiles=_ROOT_:*.sfv,_RAR_,*.nfo
+allowedfiles=_MULTICDROOT_:*.nfo
+alloweddirs=_ROOT_:Sample,Sub,Subs,Cover,Covers,Proof,Extra,Extras
+alloweddirs=_MULTICDROOT_:CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9],Sample,Sub*,Cover*,Proof,Extra,Extras
+allowedfiles=CD*[1-9],DISK*[1-9],DISC*[1-9],DVD*[1-9]:*.sfv,_RAR_
+allowedfiles=Sample:*.mp4
+allowedfiles=Sub*:*.sfv,*.rar,*.r0[0-9]
+allowedfiles=Cover*:*.jpg,*.jpeg
+allowedfiles=Proof:*.jpg,*.jpeg
+allowedfiles=Extra*:*.sfv,*.rar,*.r0[0-9]
+dirdepth=2
+
+[skiplist-XXX-PAYSITE]
+allowedfiles=_ROOT_:*.sfv,*.nfo,_RAR_
+alloweddirs=_ROOT_:Sample,Proof
+allowedfiles=Sample:*.mkv,*.mp4,*.wmv
+allowedfiles=Proof:*.jpg,*.jpeg,*proof*.sfv,*proof*.rar,*proof*.r0[0-9]
+dirdepth=2

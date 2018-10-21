@@ -1,0 +1,7 @@
+Usage: <cmd> sitename1 sitename2 sitename3 [limit]
+Limits the number of simultanious uploads per rip on the specified site.
+0 means unlimited.
+For eg to prevent dual uploading of the same rip: <cmd> HQ1 HQ2 HQ3 1
+See also: <cmdprefix>maxupdn
+
+You can use the special sitename * for site-generic rules.

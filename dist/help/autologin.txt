@@ -1,0 +1,4 @@
+Get/sets autologin status of a site.
+Usage: <cmd> sitename [0|1]
+Usage: <cmd> * [0|1]
+Note, you can use [sites] section's autologin field to make all sites log in at startup.

@@ -1,0 +1,3 @@
+Usage: <cmd> releasename
+Queries the database indexed by the autoindex feature for releasename
+and displays the results.

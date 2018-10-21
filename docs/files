@@ -1,0 +1,98 @@
+                                     Files
+-------------------------------------------------------------------------------
+This file describes what the purpose is of the several files of slFtp.
+
+- indexes.db
+  sqlite database which stores the release names pathes indexed by 
+  the autoindex feature
+
+- sites.dat
+  this is an encrypted ini file, which contains the site settings,
+  sitename, username, password, etc.
+  
+- slftp
+  precompiled linux 32 bit binary (libncurses needed!)
+  
+- slftp64
+  precompiled linux 64 bit binary (libncursesw needed!)
+  
+- slftp.exe
+  precompiled win32 binary (should work on 64bit too)
+  
+- slftp.chans
+  this encrypted file stores the precatcher rules for irc channels.
+  
+- slftp.ini
+  the main configuration file
+  
+- slftp.cini
+  encrypted version of the main configuration file, if this file
+  is present, it will be used instead of slftp.ini
+  
+- slftp.history
+  command history is being saved to this file (encrypted)
+  
+- slftp.kb
+  this is the encrypted knowledge base, containing pretime and
+  some details of the rips, to avoid backfilling
+ 
+- slftp.knowngroups
+  file for known groupnames which can be used via knowngroup (!rulehelp knowngroup) rule
+  
+- slftp.log
+  you probably already read this stuff :)
+  
+- slftp.news
+  news entries are stored in this file
+  
+- slftp.nukequeue
+  the queue of rips to be nuked are stored in this file
+  
+- slftp.pem
+  (auto generated) x509 certificate with RSA private key
+  if one day some GUI support is added to slftp, it will
+  used over the SSL/TLS encrypted secure channel
+  
+- slftp.precatcher
+  encrypted file storing the builtin precatcher's rules
+  
+- slftp.ranks
+  this file stores the "rank stats" (see CHAINS)
+  
+- slftp.rules
+  this file stores the site rules
+  
+- slftp.skip
+  skiplist used by the race engine
+  
+- slftp.skipgroups
+  list of groups which are blocked globally
+  
+- slftp.speedstats
+  latest speed stats are stored in this file
+  
+- slftp.imdbcountries
+  it contains some common imdb infos.
+  syntax is: Dirtag=Region,Country
+  e.g.: German=DE,Germany 
+  
+- slftp.spamconf
+  settings for enabling/disabling spam irc messages
+  
+- stats.db
+  sqlite database which stores the race stats 
+  
+- tvinfos.db
+  sqlite database which stores the tv info fetched from TVMaze & TheTVDB
+  
+  
+- mirktrade.dll
+  external precatcher for MiRC. See PRECATCHER
+- mirktrade.conf
+  configuration file for the MiRC based precatcher
+- mirktrade_(fish|mircryption).mrc
+  Loader MiRC script for the precatcher
+- cryptconf(.exe)
+  utility for encrypting/decrypting the config files,
+  if you need to tweak something, you probably dont, so dont touch unless
+  you know what you are doing!

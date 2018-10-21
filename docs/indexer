@@ -1,0 +1,54 @@
+                                    INDEXER
+-------------------------------------------------------------------------------
+slFtp is capable to auto fill requests from v1.2.0.15.
+slFtp maintanes an SQLite database with release names and locations (sites and 
+pathes), this is the source what it can reqfill from, this is called index.
+To add stuffs to the index, you need to add autoindex tasks. For example:
+!setdir HQ MP3ARCHIVE /ARCHIVES/MP3
+!autoindex HQ 86400 MP3ARCHIVE
+These two commands above make slftp to index HQ's MP3ARCHIVE section every day.
+The depth of the section is discovered dynamically: the first nfo will 
+determine where the rips are stored. For eg.:
+/ARCHIVES/MP3 has stuffs the following way:
+/ARCHIVES/MP3/2009/01/01/Foobar-Foobar1-2009-SHIT
+/ARCHIVES/MP3/2009/01/02/Foobar-Foobar2-2009-SHIT
+slFtp will dirlist /ARCHIVES/MP3 first, then /ARCHIVES/MP3/2009 then
+/ARCHIVES/MP3/2009/01 then /ARCHIVES/MP3/2009/01/01 then 
+/ARCHIVES/MP3/2009/01/01/Foobar-Foobar1-2009-SHIT, it finds the nfo there,
+so it treats /ARCHIVES/MP3/2009/01/01/ as a container dir and adds
+Foobar-Foobar2-2009-SHIT into the index.
+
+Then you need to setup REQUEST section on sites where you want the bot to fill 
+requests on. This is done with the autodirlist feature, since REQUEST sections
+are handled specially. For example:
+!setdir DUMP REQUEST /requests
+!autodirlist DUMP 900 REQUEST
+These two commands above make slftp to look for new requests on DUMP every 15 
+mins.
+
+slFtp (atm) parses dirnames in REQUEST section with the following restrictions:
+- request dir must start with prefix REQ-
+- the request itself might contain a timestamp prefix in 10 characters format
+
+For eg. a valid directory is:
+REQ-2005-01-13_Foobar-Foobar-2009-SHIT
+
+Then slFtp will query the index for Foobar-Foobar-2009-SHIT. If its found, 
+it will send to the site where its requested, IF a direct route (!help setspeed)
+exists between a source and the requester site.
+If a rip is found in more than one sources, all of them will be utilized.
+
+If a rip is present on the requester site, then a new dir will be created
+in the request's directory showing where it can be found and the request will be
+reqfilled.
+
+Note: SQLite database is in plain text. If you dont like this, use some file 
+system encryption. See also the [indexer] section of slftp.ini
+Or you can donate a licence to any of the following SQLite extensions:
+http://www.sqlite-crypt.com
+http://www.hwaci.com/sw/sqlite/prosupport.html
+http://www.sqlcrypt.com/
+
+Note: On Linux you need to install libsqlite3. Check very first lines of slftp.log 
+if it could load the lib succesfully. Feature becomes disabled if it failed.
+On Windows sqlite3.dll is included.

@@ -1,0 +1,11 @@
+Displays help on commands.
+Usage: <cmd> --all  displays complete command list.
+Usage: <cmd> -group displays only commands related to group
+Usage: <cmd> [commandname]
+
+Example: <cmd> -site
+Example: <cmd> --all
+
+Valid groups: general, site, auto, route, rank, speed, work, rip, stats, slots, misc, news, irc, rules, indexer, info, reload, socks5, pretime, imdb, tv, test, section
+
+Note:  --a, -all, -a also displays complete command list.
